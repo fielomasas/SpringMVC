@@ -2,7 +2,7 @@ package com.spring.spring_rest.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.AuthenticationException;
+// import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -99,14 +99,14 @@ public class StudentExceptionHandler {
      * @param ex authentication failure raised by Spring Security
      * @return the error response with HTTP 401 status
      */
-    @ExceptionHandler(AuthenticationException.class)
-    public ResponseEntity<StudentErrorResponse> handleAuthenticationException(
-            AuthenticationException ex) {
-        StudentErrorResponse err = new StudentErrorResponse();
-        err.setStatus(HttpStatus.UNAUTHORIZED.value());
-        err.setMessage("Username or password is incorrect");
-        err.setTimeStamp(System.currentTimeMillis());
+    // @ExceptionHandler(AuthenticationException.class)
+    // public ResponseEntity<StudentErrorResponse> handleAuthenticationException(
+    //         AuthenticationException ex) {
+    //     StudentErrorResponse err = new StudentErrorResponse();
+    //     err.setStatus(HttpStatus.UNAUTHORIZED.value());
+    //     err.setMessage("Username or password is incorrect");
+    //     err.setTimeStamp(System.currentTimeMillis());
 
-        return new ResponseEntity<>(err, HttpStatus.UNAUTHORIZED);
-    }
+    //     return new ResponseEntity<>(err, HttpStatus.UNAUTHORIZED);
+    // }
 }
