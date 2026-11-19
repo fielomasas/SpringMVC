@@ -87,7 +87,8 @@ public class AuthenticationController {
     }
 
     /**
-     * Registers a user with the default {@code USER} role and an encoded password.
+     * Registers a user with the default {@code USER} 
+     * role and an encoded password.
      *
      * @param authUserRegisterDto request containing the username and password
      * @return registration status and a message describing the result
