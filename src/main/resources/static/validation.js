@@ -1,3 +1,10 @@
+/**
+ * Validates the student's first name, last name, and email fields.
+ *
+ * Displays error messages and highlights fields that fail validation.
+ *
+ * @returns {boolean} True if all fields are valid; otherwise, false.
+ */
 function validateStudentForm() {
     let isValid = true;
 
@@ -8,6 +15,8 @@ function validateStudentForm() {
     const firstNameError = document.getElementById("firstNameError");
     const lastNameError = document.getElementById("lastNameError");
     const emailError = document.getElementById("emailError");
+
+    clearValidationStyles();
 
     // First Name Validation
     if (firstName.value.trim() === "") {
@@ -45,4 +54,19 @@ function validateStudentForm() {
         isValid = false;
     }
     return isValid;
+}
+
+/**
+ * Clears validation error messages and invalid styling from the student form.
+ *
+ * @returns {void}
+ */
+function clearValidationStyles() {
+    const fields = ["firstName", "lastName", "email"];
+    fields.forEach(fieldId => {
+        const element = document.getElementById(fieldId);
+        const errorSpan = document.getElementById(`${fieldId}Error`);
+        if (element) element.classList.remove("invalid");
+        if (errorSpan) errorSpan.textContent = "";
+    });
 }
